@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond Work — Siwa Dakroub</title>
+<meta name="description" content="Beyond the client work — Siwa Dakroub's dance practice and illustration work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2E5BFF;
+    --ink:#111114;
+    --paper:#FFFFFF;
+    --grey:#5B5B63;
+    --line:#111114;
+    --hair:#DFDFE4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--hair);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{
+    font-family:'IBM Plex Mono',monospace;font-weight:600;
+    font-size:.95rem;letter-spacing:.24em;text-transform:uppercase;
+  }
+  .logo em{font-style:normal;color:var(--blue);}
+  .nav-links{
+    display:flex;gap:30px;align-items:center;
+    font-family:'IBM Plex Mono',monospace;font-size:.78rem;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+  .nav-links a{color:var(--grey);transition:color .15s;}
+  .nav-links a:hover{color:var(--ink);}
+  /* Work dropdown */
+  .dropdown{position:relative;}
+  .drop-trigger{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--grey);cursor:pointer;transition:color .15s;
+    font-family:'IBM Plex Mono',monospace;font-size:.78rem;
+    letter-spacing:.18em;text-transform:uppercase;
+    background:none;border:none;padding:0;
+  }
+  .dropdown:hover .drop-trigger,
+  .dropdown:focus-within .drop-trigger{color:var(--ink);}
+  .caret{
+    display:inline-block;font-size:.7em;
+    transition:transform .15s;color:var(--blue);
+  }
+  .dropdown:hover .caret,
+  .dropdown:focus-within .caret{transform:rotate(180deg);}
+  .drop-menu{
+    position:absolute;top:100%;left:-18px;
+    padding-top:14px;min-width:230px;
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .15s,transform .15s,visibility .15s;
+    z-index:30;
+  }
+  .dropdown:hover .drop-menu,
+  .dropdown:focus-within .drop-menu{opacity:1;visibility:visible;transform:none;}
+  .drop-box{background:#fff;border:1px solid var(--line);}
+  .drop-box a{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:15px 18px;color:var(--ink);
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+  .drop-box a + a{border-top:1px solid var(--hair);}
+  .drop-box a .code{color:var(--grey);font-size:.68rem;transition:color .15s;}
+  .drop-box a:hover{background:var(--ink);color:#fff;}
+  .drop-box a:hover .code{color:rgba(255,255,255,.6);}
+  .nav-links a.active{color:var(--blue);border-bottom:2px solid var(--blue);padding-bottom:3px;}
+  .btn{
+    display:inline-block;background:var(--ink);
+    color:#FFFFFF;font-weight:700;
+    font-family:'IBM Plex Mono',monospace;font-size:.8rem;
+    letter-spacing:.2em;text-transform:uppercase;
+    padding:12px 24px;transition:background .15s;
+    -webkit-font-smoothing:subpixel-antialiased;
+  }
+  .btn:hover{background:var(--blue);color:#FFFFFF;}
+  .nav-links .btn{
+    color:#FFFFFF;font-weight:700;
+    text-shadow:0 0 .6px #FFFFFF;
+    opacity:1;
+  }
+
+  /* ---------- Page hero ---------- */
+  header.hero{padding:88px 0 72px;}
+  .intro{border:1px solid var(--line);}
+  .intro-head{
+    background:var(--ink);color:#fff;
+    padding:30px 26px;position:relative;
+    text-align:center;
+  }
+  .intro-head .title{
+    font-family:'Archivo',sans-serif;font-weight:900;
+    font-size:clamp(1.5rem,3.4vw,2.4rem);
+    letter-spacing:.02em;text-transform:uppercase;
+    line-height:1.1;display:block;
+  }
+  .intro-head .role{
+    display:table;margin:10px auto 0;
+    font-family:'IBM Plex Mono',monospace;font-weight:500;
+    font-size:clamp(.72rem,1.4vw,.95rem);
+    letter-spacing:.24em;color:#FFFFFF;
+    background:var(--blue);
+    padding:3px 10px 3px 12px;
+  }
+  .intro-head .code{
+    position:absolute;right:22px;top:16px;
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;
+    letter-spacing:.18em;opacity:.6;
+  }
+  .intro-body{padding:34px 30px 38px;}
+  .intro-body > p{
+    max-width:70ch;margin:0 auto;
+    font-weight:500;color:#2A2A30;font-size:1.05rem;
+    text-align:center;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:72px 0;border-top:1px solid var(--hair);}
+  .sec-eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:.8rem;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--ink);
+    margin-bottom:16px;display:flex;align-items:center;gap:16px;
+  }
+  .centered .sec-eyebrow{justify-content:center;}
+  .centered h2{text-align:center;}
+  .barcode{display:inline-flex;align-items:flex-end;gap:2px;height:15px;}
+  .barcode i{display:block;background:var(--ink);width:2px;height:100%;}
+  .barcode i:nth-child(2n){height:70%;width:1px;}
+  .barcode i:nth-child(3n){height:100%;width:3px;}
+  .barcode i:nth-child(5n){height:55%;}
+  h2{
+    font-weight:900;text-transform:uppercase;letter-spacing:-.015em;
+    font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.08;margin-bottom:12px;
+  }
+  .sec-sub{color:var(--grey);max-width:56ch;margin-bottom:32px;font-weight:500;}
+  .centered .sec-sub{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* ---------- Split layout ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .half-inner{position:sticky;top:96px;}
+
+  /* ---------- Dance record ---------- */
+  .record{border:1px solid var(--line);}
+  .record-head{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    background:var(--ink);color:#fff;padding:11px 18px;
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+  .record-head .code{opacity:.65;}
+  .record-row{
+    display:grid;grid-template-columns:104px 1fr;
+    border-top:1px solid var(--hair);background:#fff;
+  }
+  .record-row:first-of-type{border-top:none;}
+  .record-row .tag{
+    padding:18px;border-right:1px solid var(--hair);
+    font-family:'IBM Plex Mono',monospace;font-size:.68rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:600;
+    display:flex;align-items:center;
+  }
+  .record-row .txt{padding:18px 20px;color:#2F2F36;font-size:.95rem;font-weight:500;}
+  .yrs{
+    font-family:'IBM Plex Mono',monospace;font-size:.68rem;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:600;
+    border:1px solid var(--blue);padding:3px 10px;
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery{display:grid;grid-template-columns:1fr;gap:28px;}
+  .piece{border:1px solid var(--line);background:#fff;}
+  .piece img{display:block;width:100%;height:auto;}
+  .piece-bar{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    border-top:1px solid var(--line);padding:10px 14px;
+    font-family:'IBM Plex Mono',monospace;font-size:.68rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--grey);
+  }
+  .piece-bar .code{color:var(--blue);font-weight:600;}
+  .piece-note{
+    border-top:1px solid var(--hair);padding:9px 14px;
+    font-size:.82rem;font-weight:500;color:var(--grey);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding:28px 0;}
+  .foot{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--grey);
+  }
+  .foot a{margin-left:24px;color:var(--ink);}
+  .foot a:hover{color:var(--blue);}
+
+  @media (max-width:760px){
+    .nav-links{display:none;}
+    .split{grid-template-columns:1fr;gap:56px;}
+    .half-inner{position:static;}
+    .record-row{grid-template-columns:1fr;}
+    .record-row .tag{border-right:none;border-bottom:1px solid var(--hair);padding-bottom:8px;}
+    header.hero{padding:56px 0 48px;}
+    .intro-head{padding-right:70px;text-align:left;}
+    .intro-head .role{margin:10px 0 0;}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">Siwa Dakroub<em>.</em></a>
+    <div class="nav-links">
+      <div class="dropdown">
+        <button class="drop-trigger" type="button">Work <span class="caret">▾</span></button>
+        <div class="drop-menu">
+          <div class="drop-box">
+            <a href="work-paid-media.html"><span>Paid Media</span><span class="code">WK/01</span></a>
+            <a href="work-automation.html"><span>Automation</span><span class="code">WK/02</span></a>
+          </div>
+        </div>
+      </div>
+      <a href="index.html">About</a>
+      <a class="active" href="beyond.html">Beyond Work</a>
+      <a class="btn" href="https://calendly.com/siwadakroub15/client-calls" target="_blank" rel="noopener">Get in Touch →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="intro">
+      <div class="intro-head">
+        <span class="title">Beyond Work<span class="role">Dance · Illustration</span></span>
+        <span class="code">BY/01</span>
+      </div>
+      <div class="intro-body">
+        <p>The work that doesn't invoice. Over a decade of dance training and performance, and an illustration practice built in Procreate — collage, glitch, and story panels.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+
+      <div class="half">
+        <div class="half-inner">
+          <div class="sec-eyebrow">[ Dance ]
+            <span class="barcode"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="yrs">14 Yrs In</span>
+          </div>
+          <h2>On stage since 2012</h2>
+          <p class="sec-sub">Hip hop, heels, and house — trained, performed, competed, and coached.</p>
+
+          <div class="record">
+            <div class="record-head"><span>Dance Record</span><span class="code">DN/01</span></div>
+            <div class="record-row">
+              <div class="tag">Performed</div>
+              <div class="txt">Performed in a multitude of events and shoots — from FIFA U17 to the Beirut Marathon.</div>
+            </div>
+            <div class="record-row">
+              <div class="tag">Competed</div>
+              <div class="txt">Competed in two dance competitions in Lebanon.</div>
+            </div>
+            <div class="record-row">
+              <div class="tag">Trained</div>
+              <div class="txt">Undertook intensive professional training in London, Beirut, Paris, and Poland.</div>
+            </div>
+            <div class="record-row">
+              <div class="tag">Coached</div>
+              <div class="txt">Trained over 10 pole dancers in collaboration with PoleFit Lebanon in preparation for their competition.</div>
+            </div>
+          </div>
+
+                  </div>
+      </div>
+
+      <div class="half">
+        <div class="sec-eyebrow">[ Illustration ]
+          <span class="barcode"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+        <h2>Selected pieces</h2>
+        <p class="sec-sub">Digital collage and illustration work — built in Procreate.</p>
+
+        <div class="gallery">
+          <div class="piece">
+            <img src="assets/art-02.jpg" alt="Digital collage — a snake shedding its skin across four panels, pink and green scales with annotated shed stages.">
+            <div class="piece-bar"><span>The Shed</span><span class="code">IL/01</span></div>
+          </div>
+          <div class="piece">
+            <img src="assets/art-04.jpg" alt="Digital collage — four black-and-white panels with red vertical type.">
+            <div class="piece-bar"><span>Panel Series</span><span class="code">IL/02</span></div>
+          </div>
+          <div class="piece">
+            <img src="assets/art-01.jpg" alt="Digital collage — 'Manically! Pick your poison' — two self-portraits with bouquets, styled as a video game character select screen.">
+            <div class="piece-bar"><span>Manically — Pick Your Poison</span><span class="code">IL/03</span></div>
+          </div>
+          <div class="piece">
+            <img src="assets/art-03.jpg" alt="Digital collage — Hansel; fairy-tale and vintage imagery around mothers, hunger, and leaving.">
+            <div class="piece-bar"><span>Hansel</span><span class="code">IL/04</span></div>
+          </div>
+          <div class="piece">
+            <img src="assets/art-06.jpg" alt="Digital collage — a chessboard scene with glitched glass tiles, red sneakers, a hand, and a katana among the pieces.">
+            <div class="piece-bar"><span>The Board</span><span class="code">IL/05</span></div>
+          </div>
+          <div class="piece">
+            <img src="assets/art-05.jpg" alt="Digital collage — a 7UP delivery truck against a blue sky with Arabic calligraphy and bejeweled cans. Satire — a critique of diet culture.">
+            <div class="piece-bar"><span>Stay Skinny</span><span class="code">IL/06</span></div>
+            <div class="piece-note">Satire — a critique of diet culture.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Siwa Dakroub. All rights reserved.</span>
+    <span>
+      <a href="https://www.linkedin.com/in/siwa-dakroub/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:siwadakroub15@gmail.com">Email</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paid Media — Siwa Dakroub</title>
+<meta name="description" content="Paid media buying by Siwa Dakroub — paid social and programmatic execution across Meta, TikTok, Snapchat, X, Pinterest, DV360, Amazon DSP, Teads and YouTube.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2E5BFF;
+    --ink:#111114;
+    --paper:#FFFFFF;
+    --grey:#5B5B63;
+    --line:#111114;
+    --hair:#DFDFE4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--hair);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{
+    font-family:'IBM Plex Mono',monospace;font-weight:600;
+    font-size:.95rem;letter-spacing:.24em;text-transform:uppercase;
+  }
+  .logo em{font-style:normal;color:var(--blue);}
+  .nav-links{
+    display:flex;gap:30px;align-items:center;
+    font-family:'IBM Plex Mono',monospace;font-size:.78rem;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+  .nav-links a{color:var(--grey);transition:color .15s;}
+  .nav-links a:hover{color:var(--ink);}
+  /* Work dropdown */
+  .dropdown{position:relative;}
+  .drop-trigger{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--grey);cursor:pointer;transition:color .15s;
+    font-family:'IBM Plex Mono',monospace;font-size:.78rem;
+    letter-spacing:.18em;text-transform:uppercase;
+    background:none;border:none;padding:0;
+  }
+  .drop-trigger.active{color:var(--blue);border-bottom:2px solid var(--blue);padding-bottom:3px;}
+  .dropdown:hover .drop-trigger,
+  .dropdown:focus-within .drop-trigger{color:var(--ink);}
+  .dropdown:hover .drop-trigger.active,
+  .dropdown:focus-within .drop-trigger.active{color:var(--blue);}
+  .caret{
+    display:inline-block;font-size:.7em;
+    transition:transform .15s;color:var(--blue);
+  }
+  .dropdown:hover .caret,
+  .dropdown:focus-within .caret{transform:rotate(180deg);}
+  .drop-menu{
+    position:absolute;top:100%;left:-18px;
+    padding-top:14px;min-width:230px;
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .15s,transform .15s,visibility .15s;
+    z-index:30;
+  }
+  .dropdown:hover .drop-menu,
+  .dropdown:focus-within .drop-menu{opacity:1;visibility:visible;transform:none;}
+  .drop-box{background:#fff;border:1px solid var(--line);}
+  .drop-box a{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:15px 18px;color:var(--ink);
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+  .drop-box a + a{border-top:1px solid var(--hair);}
+  .drop-box a .code{color:var(--grey);font-size:.68rem;transition:color .15s;}
+  .drop-box a:hover{background:var(--ink);color:#fff;}
+  .drop-box a:hover .code{color:rgba(255,255,255,.6);}
+  .drop-box a.here{background:var(--blue);color:#fff;}
+  .drop-box a.here .code{color:rgba(255,255,255,.6);}
+  .nav-links a.active{color:var(--blue);border-bottom:2px solid var(--blue);padding-bottom:3px;}
+  .btn{
+    display:inline-block;background:var(--ink);
+    color:#FFFFFF;font-weight:700;
+    font-family:'IBM Plex Mono',monospace;font-size:.8rem;
+    letter-spacing:.2em;text-transform:uppercase;
+    padding:12px 24px;transition:background .15s;
+    -webkit-font-smoothing:subpixel-antialiased;
+  }
+  .btn:hover{background:var(--blue);color:#FFFFFF;}
+  .nav-links .btn{
+    color:#FFFFFF;font-weight:700;
+    text-shadow:0 0 .6px #FFFFFF;
+    opacity:1;
+  }
+  .btn.big{padding:18px 42px;font-size:.85rem;}
+
+  /* ---------- Page hero ---------- */
+  header.hero{padding:88px 0 72px;}
+  .intro{border:1px solid var(--line);}
+  .intro-head{
+    background:var(--ink);color:#fff;
+    padding:30px 26px;position:relative;
+    text-align:center;
+  }
+  .intro-head .title{
+    font-family:'Archivo',sans-serif;font-weight:900;
+    font-size:clamp(1.5rem,3.4vw,2.4rem);
+    letter-spacing:.02em;text-transform:uppercase;
+    line-height:1.1;display:block;
+  }
+  .intro-head .role{
+    display:table;margin:10px auto 0;
+    font-family:'IBM Plex Mono',monospace;font-weight:500;
+    font-size:clamp(.72rem,1.4vw,.95rem);
+    letter-spacing:.24em;color:#FFFFFF;
+    background:var(--blue);
+    padding:3px 10px 3px 12px;
+  }
+  .intro-head .code{
+    position:absolute;right:22px;top:16px;
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;
+    letter-spacing:.18em;opacity:.6;
+  }
+  .intro-body{padding:34px 30px 38px;}
+  .intro-body > p{
+    max-width:70ch;margin:0 auto;
+    font-weight:500;color:#2A2A30;font-size:1.05rem;
+    text-align:center;
+  }
+  .intro-body > p.standalone{margin-top:14px;}
+
+  /* ---------- Platform ledger ---------- */
+  .ledger{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;border:1px solid var(--line);}
+  .ledger-col + .ledger-col{border-left:1px solid var(--line);}
+  .ledger-head{
+    background:var(--ink);color:#fff;padding:8px 14px;
+    font-family:'IBM Plex Mono',monospace;font-size:.68rem;
+    letter-spacing:.2em;text-transform:uppercase;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .ledger-col.blue .ledger-head{background:var(--blue);}
+  .ledger-head .code{opacity:.65;}
+  .ledger-rows{
+    background:#fff;padding:14px;
+    display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;
+  }
+  .ledger-row{
+    font-family:'IBM Plex Mono',monospace;font-size:.68rem;
+    letter-spacing:.12em;text-transform:uppercase;
+    border:1px solid var(--line);padding:5px 11px;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:72px 0;border-top:1px solid var(--hair);}
+  .sec-eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:.8rem;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--ink);
+    margin-bottom:16px;display:flex;align-items:center;gap:16px;
+  }
+  .centered .sec-eyebrow{justify-content:center;}
+  .centered h2{text-align:center;}
+  .barcode{display:inline-flex;align-items:flex-end;gap:2px;height:15px;}
+  .barcode i{display:block;background:var(--ink);width:2px;height:100%;}
+  .barcode i:nth-child(2n){height:70%;width:1px;}
+  .barcode i:nth-child(3n){height:100%;width:3px;}
+  .barcode i:nth-child(5n){height:55%;}
+  h2{
+    font-weight:900;text-transform:uppercase;letter-spacing:-.015em;
+    font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.08;margin-bottom:12px;
+  }
+  .sec-sub{color:var(--grey);max-width:56ch;margin-bottom:44px;font-weight:500;}
+  .centered .sec-sub{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* ---------- Case blocks ---------- */
+  .case{border:1px solid var(--line);background:#fff;margin-bottom:32px;}
+  .case:last-of-type{margin-bottom:0;}
+  .case.live{border-color:var(--blue);}
+  .case-head{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    background:var(--ink);color:#fff;padding:11px 18px;
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+  .case.live .case-head{background:var(--blue);}
+  .case-head .code{opacity:.65;}
+  .case-body{padding:26px 24px 28px;}
+  .case-body h3{font-weight:900;text-transform:uppercase;font-size:1.25rem;letter-spacing:-.01em;margin-bottom:4px;}
+  .case-body .where{
+    font-family:'IBM Plex Mono',monospace;font-size:.74rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--grey);
+    margin-bottom:16px;
+  }
+  .case-body p{max-width:66ch;color:#2F2F36;font-size:.97rem;font-weight:500;}
+  .case-body p.pt{margin-bottom:10px;}
+  .case-body p.pt:last-of-type{margin-bottom:0;}
+  .lbl{
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--blue);
+    font-weight:600;margin-right:6px;
+  }
+  .case-body .chips{margin-top:18px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    font-family:'IBM Plex Mono',monospace;font-size:.64rem;
+    letter-spacing:.12em;text-transform:uppercase;
+    border:1px solid var(--line);padding:5px 11px;
+  }
+
+  /* ---------- Process strip ---------- */
+  .process{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);margin-top:32px;}
+  .step{padding:20px 16px 22px;background:#fff;}
+  .step + .step{border-left:1px solid var(--line);}
+  .step .num{
+    font-family:'IBM Plex Mono',monospace;font-size:.7rem;
+    letter-spacing:.18em;color:var(--blue);font-weight:600;
+    display:block;margin-bottom:8px;
+  }
+  .step h4{
+    font-weight:900;text-transform:uppercase;font-size:.86rem;
+    letter-spacing:.02em;margin-bottom:6px;
+  }
+  .step p{color:var(--grey);font-size:.8rem;font-weight:500;line-height:1.5;}
+
+  /* ---------- CTA ---------- */
+  .cta{text-align:center;padding:100px 0;}
+  .cta .sec-eyebrow{justify-content:center;color:var(--blue);}
+  .cta h2{max-width:18ch;margin:0 auto 14px;}
+  .cta p{color:var(--grey);margin-bottom:36px;font-weight:500;max-width:48ch;margin-left:auto;margin-right:auto;}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding:28px 0;}
+  .foot{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--grey);
+  }
+  .foot a{margin-left:24px;color:var(--ink);}
+  .foot a:hover{color:var(--blue);}
+
+  @media (max-width:760px){
+    .nav-links{display:none;}
+    .ledger{grid-template-columns:1fr;}
+    .ledger-col + .ledger-col{border-left:none;border-top:1px solid var(--line);}
+    .process{grid-template-columns:1fr;}
+    .step + .step{border-left:none;border-top:1px solid var(--line);}
+    header.hero{padding:56px 0 48px;}
+    .intro-head{padding-right:70px;text-align:left;}
+    .intro-head .role{margin:10px 0 0;}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">Siwa Dakroub<em>.</em></a>
+    <div class="nav-links">
+      <div class="dropdown">
+        <button class="drop-trigger active" type="button">Work <span class="caret">▾</span></button>
+        <div class="drop-menu">
+          <div class="drop-box">
+            <a class="here" href="work-paid-media.html"><span>Paid Media</span><span class="code">WK/01</span></a>
+            <a href="work-automation.html"><span>Automation</span><span class="code">WK/02</span></a>
+          </div>
+        </div>
+      </div>
+      <a href="index.html">About</a>
+      <a href="beyond.html">Beyond Work</a>
+      <a class="btn" href="https://calendly.com/siwadakroub15/client-calls" target="_blank" rel="noopener">Get in Touch →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="intro">
+      <div class="intro-head">
+        <span class="title">Paid Media<span class="role">Buying · Optimization · Reporting</span></span>
+        <span class="code">WK/01</span>
+      </div>
+      <div class="intro-body">
+        <p>Full-funnel paid media execution across paid social and programmatic — campaign structure, budget pacing, creative testing, and reporting that tells clients what actually happened and what to do next.</p>
+        <p class="standalone">Years of it inside a global media network, now delivered directly to brands.</p>
+      </div>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-col">
+        <div class="ledger-head"><span>Paid Social</span><span class="code">PL/01</span></div>
+        <div class="ledger-rows">
+          <div class="ledger-row">Meta</div>
+          <div class="ledger-row">TikTok</div>
+          <div class="ledger-row">Snapchat</div>
+          <div class="ledger-row">X</div>
+          <div class="ledger-row">Pinterest</div>
+          <div class="ledger-row">LinkedIn</div>
+        </div>
+      </div>
+      <div class="ledger-col blue">
+        <div class="ledger-head"><span>Programmatic &amp; Video</span><span class="code">PL/02</span></div>
+        <div class="ledger-rows">
+          <div class="ledger-row">DV360</div>
+          <div class="ledger-row">YouTube Ads</div>
+          <div class="ledger-row">Amazon DSP</div>
+          <div class="ledger-row">Teads</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="centered">
+  <div class="wrap">
+    <div class="sec-eyebrow">[ Client Workflow ]
+      <span class="barcode"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    </div>
+    <h2>What working together looks like</h2>
+
+    <div class="process">
+      <div class="step"><span class="num">01 / Brief</span><h4>Intro Call</h4><p>Book an introductory call where we pinpoint your needs, clearly define your goals and how we reach the target together.</p></div>
+      <div class="step"><span class="num">02 / Structure</span><h4>Strategy</h4><p>A strategy document delivered to you with the proposed approach, services offered, and overall digital strategy — until final alignment.</p></div>
+      <div class="step"><span class="num">03 / Execution</span><h4>Retainer</h4><p>Execution of the proposed plan — setting up paid campaigns and going live.</p></div>
+      <div class="step"><span class="num">04 / Optimize</span><h4>Pacing</h4><p>Budget pacing and creative rotation monitored against full-funnel KPIs.</p></div>
+      <div class="step"><span class="num">05 / Report</span><h4>Insight</h4><p>Reporting summaries: what happened, why, and what changes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="sec-eyebrow">[ Get In Touch ]</div>
+    <h2>Need someone to run the media?</h2>
+    <p>Paid social, programmatic, or both — book a time and let's talk through your accounts.</p>
+    <a class="btn big" href="https://calendly.com/siwadakroub15/client-calls" target="_blank" rel="noopener">Get in Touch →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Siwa Dakroub. All rights reserved.</span>
+    <span>
+      <a href="https://www.linkedin.com/in/siwa-dakroub/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:siwadakroub15@gmail.com">Email</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
