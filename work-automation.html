@@ -268,6 +268,17 @@
   .mobile-menu a.sub{padding-left:44px;color:var(--grey);}
   .mobile-menu a.here{color:var(--blue);font-weight:600;}
   .mobile-menu a.mbtn{background:var(--ink);color:#fff;font-weight:700;border-bottom:none;}
+  .m-work{
+    display:flex;justify-content:space-between;align-items:center;width:100%;
+    background:none;border:none;cursor:pointer;text-align:left;
+    padding:15px 24px;border-bottom:1px solid var(--hair);
+    font-family:'IBM Plex Mono',monospace;font-size:.78rem;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
+  }
+  .m-work .caret{transition:transform .15s;}
+  .m-work[aria-expanded="true"] .caret{transform:rotate(180deg);}
+  .m-sub{display:none;}
+  .m-sub.open{display:block;}
   @media (max-width:760px){.menu-btn{display:inline-block;}}
   @media (min-width:761px){.mobile-menu{display:none!important;}}
 
@@ -317,8 +328,11 @@
   </div>
 
   <div class="mobile-menu" id="mmenu">
+    <button class="m-work" aria-expanded="false">Work <span class="caret">▾</span></button>
+    <div class="m-sub" id="msub">
     <a class="sub" href="work-paid-media.html">Paid Media — WK/01</a>
     <a class="sub here" href="work-automation.html">Automation — WK/02</a>
+    </div>
     <a class="" href="index.html">About</a>
     <a class="" href="beyond.html">Beyond Work</a>
     <a href="mailto:siwadakroub15@gmail.com">Email Me</a>
@@ -464,6 +478,14 @@
     b.setAttribute('aria-expanded',open);
     b.textContent=open?'Close ✕':'Menu ☰';
   });}
+  var w=document.querySelector('.m-work'),s=document.getElementById('msub');
+  if(w&&s){
+    if(s.querySelector('.here')){s.classList.add('open');w.setAttribute('aria-expanded','true');}
+    w.addEventListener('click',function(){
+      var open=s.classList.toggle('open');
+      w.setAttribute('aria-expanded',open);
+    });
+  }
 })();
 </script>
 </body>
