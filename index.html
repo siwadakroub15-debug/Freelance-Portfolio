@@ -105,6 +105,12 @@
     opacity:1;
   }
   .btn.big{padding:18px 42px;font-size:.85rem;}
+  .btn.ghost{
+    background:transparent;color:var(--ink);
+    border:1px solid var(--line);text-shadow:none;
+  }
+  .btn.ghost:hover{background:transparent;color:var(--blue);border-color:var(--blue);}
+
 
   /* ---------- Intro box ---------- */
   header.hero{padding:88px 0 72px;}
@@ -273,6 +279,8 @@
 
   /* ---------- CTA ---------- */
   .cta{text-align:center;padding:100px 0;}
+  .cta-row{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;}
+
   .cta .sec-eyebrow{justify-content:center;color:var(--blue);}
   .cta h2{max-width:18ch;margin:0 auto 14px;}
   .cta p{color:var(--grey);margin-bottom:36px;font-weight:500;max-width:48ch;margin-left:auto;margin-right:auto;}
@@ -339,6 +347,7 @@
       </div>
       <a href="#" class="active">About</a>
       <a href="beyond.html">Beyond Work</a>
+      <a class="btn ghost" href="mailto:siwadakroub15@gmail.com">Email</a>
       <a class="btn" href="https://calendly.com/siwadakroub15/client-calls" target="_blank" rel="noopener">Get in Touch →</a>
     </div>
     <button class="menu-btn" aria-expanded="false" aria-controls="mmenu">Menu ☰</button>
@@ -349,6 +358,7 @@
     <a class="sub" href="work-automation.html">Automation — WK/02</a>
     <a class="here" href="index.html">About</a>
     <a class="" href="beyond.html">Beyond Work</a>
+    <a href="mailto:siwadakroub15@gmail.com">Email Me</a>
     <a class="mbtn" href="https://calendly.com/siwadakroub15/client-calls" target="_blank" rel="noopener">Get in Touch →</a>
   </div>
 </nav>
@@ -514,7 +524,10 @@
     <div class="sec-eyebrow">[ Get In Touch ]</div>
     <h2>Say hello.</h2>
     <p>Looking for someone to run your paid ads or automate your marketing — book a time and let's talk.</p>
-    <a class="btn big" href="https://calendly.com/siwadakroub15/client-calls" target="_blank" rel="noopener">Get in Touch →</a>
+    <div class="cta-row">
+      <a class="btn big" href="https://calendly.com/siwadakroub15/client-calls" target="_blank" rel="noopener">Get in Touch →</a>
+      <a class="btn big ghost" href="mailto:siwadakroub15@gmail.com">Email Me</a>
+    </div>
   </div>
 </section>
 
