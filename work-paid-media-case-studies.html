@@ -117,6 +117,20 @@
   .btn.ghost:hover{background:transparent;color:var(--blue);border-color:var(--blue);}
 
 
+  /* ---------- Stat strip ---------- */
+  .stat-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-bottom:32px;background:#fff;}
+  .stat-cell{padding:36px 18px 30px;text-align:center;}
+  .stat-cell + .stat-cell{border-left:1px solid var(--line);}
+  .stat-cell .num{
+    font-family:'IBM Plex Mono',monospace;font-weight:700;
+    font-size:clamp(1.5rem,3vw,2.15rem);line-height:1;display:block;
+  }
+  .stat-cell .lbl{
+    display:block;margin-top:14px;
+    font-family:'IBM Plex Mono',monospace;font-size:.7rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--grey);
+  }
+
   /* ---------- Page hero ---------- */
   header.hero{padding:88px 0 72px;}
   .intro{border:1px solid var(--line);}
@@ -374,6 +388,11 @@
     .mx:nth-child(n+3){border-top:1px solid var(--line);}
     .case-grid{grid-template-columns:1fr;}
     header.hero{padding:56px 0 48px;}
+    .stat-strip{grid-template-columns:1fr 1fr;}
+    .stat-cell + .stat-cell{border-left:none;}
+    .stat-cell:nth-child(2n){border-left:1px solid var(--line);}
+    .stat-cell:nth-child(n+3){border-top:1px solid var(--line);}
+    .stat-cell{padding:26px 14px 22px;}
     .intro-head{padding-right:70px;text-align:left;}
     .intro-head .role{margin:10px 0 0;}
   }
@@ -421,6 +440,13 @@
 
 <header class="hero">
   <div class="wrap">
+    <div class="stat-strip">
+      <div class="stat-cell"><span class="num">$3M+</span><span class="lbl">Single-Campaign Budgets</span></div>
+      <div class="stat-cell"><span class="num">10+</span><span class="lbl">Ad Platforms</span></div>
+      <div class="stat-cell"><span class="num">7+</span><span class="lbl">Brands</span></div>
+      <div class="stat-cell"><span class="num">6</span><span class="lbl">Industries</span></div>
+    </div>
+
     <div class="intro">
       <div class="intro-head">
         <span class="title">Paid Media Case Studies<span class="role">Paid Social · Programmatic</span></span>
